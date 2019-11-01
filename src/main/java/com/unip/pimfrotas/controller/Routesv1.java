@@ -32,7 +32,9 @@ public class Routesv1 {
    */
   @GetMapping("/frota")
   public String getFrota() {
-    return HttpStatus.OK.toString();
+
+    // return HttpStatus.OK.toString();
+    return "Gabriel";
   };
 
   @PostMapping("/frota")
