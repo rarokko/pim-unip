@@ -1,10 +1,16 @@
 package com.unip.pimfrotas.controller;
  
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import com.unip.pimfrotas.model.Carro;
+import com.unip.pimfrotas.model.User;
  
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,25 +22,68 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.handler.ExceptionHandlingWebHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @RestController
 @RequestMapping("/api/v1")
 
 public class Routesv1 {
-//   @Autowired
 
-  /**
-   * Obter frota.
-   *
-   * @param 
-   * @return frota baseado em parametros enviados pela requisição
-   */
+  DbConnection db = new DbConnection();
+  Connection conn = null;
+  PreparedStatement preparedStatement = null;
+  Statement stmt = null;
+  ResultSet rs = null;
+  String query = "";
+  
+  @PostMapping("/registerUser")
+  public String registerUser(@RequestBody User user) {
+    String nomeDoUsuario = user.getNomeDoUsuario();
+    String senha = user.getSenha();
+    query = "INSERT INTO MecFrotas.LOGIN VALUES ('" + nomeDoUsuario + "', '" + senha + "')";
+    rs = db.query(query);
+    return HttpStatus.OK.toString();
+  };
+  
+  @PostMapping("/loginUser")
+  public String loginUser(@RequestBody User user) {
+    String nomeDoUsuario = user.getNomeDoUsuario();
+    String senha = user.getSenha();
+    query = "SELECT NomeDoUsuario, Senha FROM MecFrotas.LOGIN WHERE NomeDoUsuario = '" + nomeDoUsuario + "' AND Senha = '" + senha + "'";
+    rs = db.query(query);
+    try {
+      int count = 0;
+      while (rs.next()) {
+          ++count;
+      }
+      if (count == 0) {
+        return HttpStatus.FORBIDDEN.toString();
+      } else {
+        return HttpStatus.OK.toString();
+      }
+    } catch (SQLException ex) {
+      System.out.println("VendorError: " + ex.getErrorCode());
+      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+    }
+
+  };
+
   @GetMapping("/frota")
   public String getFrota() {
-
-    // return HttpStatus.OK.toString();
-    return "Gabriel";
+    // conn = db.connect();
+    // try {
+    //   stmt = conn.createStatement();
+    //   query = "SELECT * FROM MecFrotas.LOGIN";
+    //   stmt.execute(query);
+    //   rs = stmt.getResultSet();
+    //   System.out.println(rs);
+    // } catch (SQLException ex) {
+    //   System.out.println("SQLException: " + ex.getMessage());
+    //   System.out.println("SQLState: " + ex.getSQLState());
+    //   System.out.println("VendorError: " + ex.getErrorCode());
+    // }
+      return HttpStatus.OK.toString();
   };
 
   @PostMapping("/frota")
