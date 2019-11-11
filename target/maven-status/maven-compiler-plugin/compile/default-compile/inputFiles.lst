@@ -1,4 +1,14 @@
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Pneu.java
 /home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/PimFrotasApplication.java
-/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Carro.java
-/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/controller/Routesv1.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/User.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Abastecimento.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Multa.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Motorista.java
 /home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/controller/DbConnection.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Seguro.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Pecas.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Cliente.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Manutencao.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Veiculo.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/model/Viagem.java
+/home/rarokko/Documents/Projects/pim-unip/src/main/java/com/unip/pimfrotas/controller/Routesv1.java
