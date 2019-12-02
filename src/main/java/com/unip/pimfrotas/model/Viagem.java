@@ -224,19 +224,19 @@ public class Viagem {
     @Override
     public String toString() {
         return "{" +
-            " estadoInicioViagem='" + getEstadoInicioViagem() + "'" +
-            ", cidadeInicioViagem='" + getCidadeInicioViagem() + "'" +
-            ", dataSaidaViagem='" + getDataSaidaViagem() + "'" +
-            ", enderecoInicioViagem='" + getEnderecoInicioViagem() + "'" +
-            ", dataChegadaViagem='" + getDataChegadaViagem() + "'" +
-            ", estadoDestinoViagem='" + getEstadoDestinoViagem() + "'" +
-            ", cidadeDestinoViagem='" + getCidadeDestinoViagem() + "'" +
-            ", enderecoDestinoViagem='" + getEnderecoDestinoViagem() + "'" +
-            ", descricaoViagem='" + getDescricaoViagem() + "'" +
-            ", quilometragemFinalVeiculo='" + getQuilometragemFinalVeiculo() + "'" +
-            ", clienteId='" + getClienteId() + "'" +
-            ", cpfMotorista='" + getCpfMotorista() + "'" +
-            ", placaVeiculo='" + getPlacaVeiculo() + "'" +
+            "\"estadoInicioViagem\":\"" + getEstadoInicioViagem() + "\"" +
+            ",\"cidadeInicioViagem\":\"" + getCidadeInicioViagem() + "\"" +
+            ",\"dataSaidaViagem\":\"" + getDataSaidaViagem() + "\"" +
+            ",\"enderecoInicioViagem\":\"" + getEnderecoInicioViagem() + "\"" +
+            ",\"dataChegadaViagem\":\"" + getDataChegadaViagem() + "\"" +
+            ",\"estadoDestinoViagem\":\"" + getEstadoDestinoViagem() + "\"" +
+            ",\"cidadeDestinoViagem\":\"" + getCidadeDestinoViagem() + "\"" +
+            ",\"enderecoDestinoViagem\":\"" + getEnderecoDestinoViagem() + "\"" +
+            ",\"descricaoViagem\":\"" + getDescricaoViagem() + "\"" +
+            ",\"quilometragemFinalVeiculo\":\"" + getQuilometragemFinalVeiculo() + "\"" +
+            ",\"clienteId\":\"" + getClienteId() + "\"" +
+            ",\"cpfMotorista\":\"" + getCpfMotorista() + "\"" +
+            ",\"placaVeiculo\":\"" + getPlacaVeiculo() + "\"" +
             "}";
     }
 

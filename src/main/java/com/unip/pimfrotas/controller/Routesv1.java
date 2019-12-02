@@ -35,9 +35,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.server.handler.ExceptionHandlingWebHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
 
@@ -60,7 +62,7 @@ public class Routesv1 {
   };
   
   @PostMapping("/loginUser")
-  public String loginUser(@RequestBody User user) {
+  public ResponseEntity<String> loginUser(@RequestBody User user) {
     String nomeDoUsuario = user.getNomeDoUsuario();
     String senha = user.getSenha();
     query = "SELECT NomeDoUsuario, Senha FROM MecFrotas.LOGIN WHERE NomeDoUsuario = '" + nomeDoUsuario + "' AND Senha = '" + senha + "'";
@@ -71,21 +73,26 @@ public class Routesv1 {
           ++count;
       }
       if (count == 0) {
-        return HttpStatus.FORBIDDEN.toString();
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN.toString(), HttpStatus.FORBIDDEN);
       } else {
-        return HttpStatus.OK.toString();
+        return new ResponseEntity<>(HttpStatus.OK.toString(), HttpStatus.OK);
       }
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
   @GetMapping("/abastecimento")
-  public String getAbastecimento(@RequestParam String id) {
+  public ResponseEntity<String> getAbastecimento(@RequestParam(required = false) String id) {
     String abastecimentoId = id;
     System.out.print(id);
-    query = "SELECT * FROM MecFrotas.Abastecimento WHERE AbastecimentoID = '" + abastecimentoId + "'";
+    query = "SELECT * FROM MecFrotas.Abastecimento";
+
+    if (id != null) {
+      query += " WHERE AbastecimentoID = '" + abastecimentoId + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Abastecimento> abastecimentoLista = new ArrayList<Abastecimento>();
     try {
@@ -101,10 +108,10 @@ public class Routesv1 {
           );
           abastecimentoLista.add(abastecimentoItem);
       }
-      return abastecimentoLista.toString();
+      return new ResponseEntity<>(abastecimentoLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -139,8 +146,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/veiculo")
-  public String getVeiculo(@RequestParam String placaVeiculo) {
-    query = "SELECT * FROM MecFrotas.Veiculo WHERE PlacaVeiculo = '" + placaVeiculo + "'";
+  public ResponseEntity<String> getVeiculo(@RequestParam(required = false) String placaVeiculo) {
+    query = "SELECT * FROM MecFrotas.Veiculo";
+
+    if (placaVeiculo != null) {
+      query += " WHERE PlacaVeiculo = '" + placaVeiculo + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Veiculo> veiculoLista = new ArrayList<Veiculo>();
     try {
@@ -161,10 +173,10 @@ public class Routesv1 {
           );
           veiculoLista.add(veiculoItem);
       }
-      return veiculoLista.toString();
+      return new ResponseEntity<>(veiculoLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -214,8 +226,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/cliente")
-  public String getCliente(@RequestParam String id) {
-    query = "SELECT * FROM MecFrotas.Cliente WHERE ClienteID = '" + id + "'";
+  public ResponseEntity<String> getCliente(@RequestParam(required = false) String id) {
+    query = "SELECT * FROM MecFrotas.Cliente";
+
+    if (id != null) {
+      query += " WHERE ClienteID = '" + id + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Cliente> clienteLista = new ArrayList<Cliente>();
     try {
@@ -235,10 +252,10 @@ public class Routesv1 {
           );
           clienteLista.add(clienteItem);
       }
-      return clienteLista.toString();
+      return new ResponseEntity<>(clienteLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -285,8 +302,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/manutencao")
-  public String getManutencao(@RequestParam String id) {
-    query = "SELECT * FROM MecFrotas.Manutencao WHERE ManutencaoID = '" + id + "'";
+  public ResponseEntity<String> getManutencao(@RequestParam(required = false) String id) {
+    query = "SELECT * FROM MecFrotas.Manutencao";
+
+    if (id != null) {
+      query += " WHERE ManutencaoID = '" + id + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Manutencao> manutencaoLista = new ArrayList<Manutencao>();
     try {
@@ -302,10 +324,10 @@ public class Routesv1 {
           );
           manutencaoLista.add(manutencaoItem);
       }
-      return manutencaoLista.toString();
+      return new ResponseEntity<>(manutencaoLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -340,8 +362,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/motorista")
-  public String getMotorista(@RequestParam String cpfMotorista) {
-    query = "SELECT * FROM MecFrotas.Motorista WHERE CpfMotorista = '" + cpfMotorista + "'";
+  public ResponseEntity<String> getMotorista(@RequestParam(required = false) String cpfMotorista) {
+    query = "SELECT * FROM MecFrotas.Motorista";
+
+    if (cpfMotorista != null) {
+      query += " WHERE CpfMotorista = '" + cpfMotorista + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Motorista> motoristaLista = new ArrayList<Motorista>();
     try {
@@ -364,10 +391,10 @@ public class Routesv1 {
           );
           motoristaLista.add(motoristaItem);
       }
-      return motoristaLista.toString();
+      return new ResponseEntity<>(motoristaLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -423,8 +450,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/multa")
-  public String getMulta(@RequestParam String id) {
-    query = "SELECT * FROM MecFrotas.Multa WHERE MultaID = '" + id + "'";
+  public ResponseEntity<String> getMulta(@RequestParam(required = false) String id) {
+    query = "SELECT * FROM MecFrotas.Multa";
+
+    if (id != null) {
+      query += " WHERE MultaID = '" + id + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Multa> multaLista = new ArrayList<Multa>();
     try {
@@ -442,10 +474,10 @@ public class Routesv1 {
           );
           multaLista.add(multaItem);
       }
-      return multaLista.toString();
+      return new ResponseEntity<>(multaLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -486,8 +518,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/pecas")
-  public String getPecas(@RequestParam String id) {
-    query = "SELECT * FROM MecFrotas.Pecas WHERE PecaID = '" + id + "'";
+  public ResponseEntity<String> getPecas(@RequestParam(required = false) String id) {
+    query = "SELECT * FROM MecFrotas.Pecas";
+
+    if (id != null) {
+      query += " WHERE PecaID = '" + id + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Pecas> pecasLista = new ArrayList<Pecas>();
     try {
@@ -501,10 +538,10 @@ public class Routesv1 {
           );
           pecasLista.add(pecasItem);
       }
-      return pecasLista.toString();
+      return new ResponseEntity<>(pecasLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -533,8 +570,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/pneu")
-  public String getPneu(@RequestParam String id) {
-    query = "SELECT * FROM MecFrotas.Pneu WHERE PneuID = '" + id + "'";
+  public ResponseEntity<String> getPneu(@RequestParam(required = false) String id) {
+    query = "SELECT * FROM MecFrotas.Pneu";
+
+    if (id != null) {
+      query += " WHERE PneuID = '" + id + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Pneu> pneuLista = new ArrayList<Pneu>();
     try {
@@ -550,10 +592,10 @@ public class Routesv1 {
           );
           pneuLista.add(pneuItem);
       }
-      return pneuLista.toString();
+      return new ResponseEntity<>(pneuLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -588,8 +630,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/seguro")
-  public String getSeguro(@RequestParam String apoliceSeguro) {
-    query = "SELECT * FROM MecFrotas.Seguro WHERE ApoliceSeguro = '" + apoliceSeguro + "'";
+  public ResponseEntity<String> getSeguro(@RequestParam(required = false) String apoliceSeguro) {
+    query = "SELECT * FROM MecFrotas.Seguro";
+
+    if (apoliceSeguro != null) {
+      query += " WHERE ApoliceSeguro = '" + apoliceSeguro + "'";
+    };
+
     System.out.print(query);
     rs = db.query(query);
     ArrayList<Seguro> seguroLista = new ArrayList<Seguro>();
@@ -610,10 +657,10 @@ public class Routesv1 {
           );
           seguroLista.add(seguroItem);
       }
-      return seguroLista.toString();
+      return new ResponseEntity<>(seguroLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 
@@ -660,8 +707,13 @@ public class Routesv1 {
   };
 
   @GetMapping("/viagem")
-  public String getViagem(@RequestParam String id) {
-    query = "SELECT * FROM MecFrotas.Viagem WHERE ViagemID = '" + id + "'";
+  public ResponseEntity<String> getViagem(@RequestParam(required = false) String id) {
+    query = "SELECT * FROM MecFrotas.Viagem";
+
+    if (id != null) {
+      query += " WHERE ViagemID = '" + id + "'";
+    };
+
     rs = db.query(query);
     ArrayList<Viagem> viagemLista = new ArrayList<Viagem>();
     try {
@@ -683,10 +735,10 @@ public class Routesv1 {
           );
           viagemLista.add(viagemItem);
       }
-      return viagemLista.toString();
+      return new ResponseEntity<>(viagemLista.toString(), HttpStatus.OK);
     } catch (SQLException ex) {
       System.out.println("VendorError: " + ex.getErrorCode());
-      return HttpStatus.INTERNAL_SERVER_ERROR.toString();
+      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   };
 

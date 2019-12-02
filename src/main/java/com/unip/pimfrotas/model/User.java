@@ -58,8 +58,8 @@ public class User {
     @Override
     public String toString() {
         return "{" +
-            " nomeDoUsuario='" + getNomeDoUsuario() + "'" +
-            ", senha='" + getSenha() + "'" +
+            "\"nomeDoUsuario\":\"" + getNomeDoUsuario() + "\"" +
+            ",\"senha\":\"" + getSenha() + "\"" +
             "}";
     }
 }

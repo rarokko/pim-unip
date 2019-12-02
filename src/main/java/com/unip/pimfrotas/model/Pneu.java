@@ -134,13 +134,13 @@ public class Pneu {
     @Override
     public String toString() {
         return "{" +
-            " marcaPneu='" + getMarcaPneu() + "'" +
-            ", quilometragemPercorridaPneu='" + getQuilometragemPercorridaPneu() + "'" +
-            ", dataPneu='" + getDataPneu() + "'" +
-            ", valorPneu='" + getValorPneu() + "'" +
-            ", situacaoPneu='" + getSituacaoPneu() + "'" +
-            ", clienteId='" + getClienteId() + "'" +
-            ", placaVeiculo='" + getPlacaVeiculo() + "'" +
+            "\"marcaPneu\":\"" + getMarcaPneu() + "\"" +
+            ",\"quilometragemPercorridaPneu\":\"" + getQuilometragemPercorridaPneu() + "\"" +
+            ",\"dataPneu\":\"" + getDataPneu() + "\"" +
+            ",\"valorPneu\":\"" + getValorPneu() + "\"" +
+            ",\"situacaoPneu\":\"" + getSituacaoPneu() + "\"" +
+            ",\"clienteId\":\"" + getClienteId() + "\"" +
+            ",\"placaVeiculo\":\"" + getPlacaVeiculo() + "\"" +
             "}";
     }
 

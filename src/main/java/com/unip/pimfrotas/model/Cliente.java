@@ -194,17 +194,17 @@ public class Cliente {
     @Override
     public String toString() {
         return "{" +
-            " razaoSocialCliente='" + getRazaoSocialCliente() + "'" +
-            ", cnpjCliente='" + getCnpjCliente() + "'" +
-            ", enderecoCliente='" + getEnderecoCliente() + "'" +
-            ", bairroCliente='" + getBairroCliente() + "'" +
-            ", cidadeCliente='" + getCidadeCliente() + "'" +
-            ", estadoCliente='" + getEstadoCliente() + "'" +
-            ", ativo='" + getAtivo() + "'" +
-            ", emailCliente='" + getEmailCliente() + "'" +
-            ", telefoneCliente='" + getTelefoneCliente() + "'" +
-            ", qntdVeiculosCliente='" + getQntdVeiculosCliente() + "'" +
-            ", qntdMotoristasCliente='" + getQntdMotoristasCliente() + "'" +
+            "\"razaoSocialCliente\":\"" + getRazaoSocialCliente() + "\"" +
+            ",\"cnpjCliente\":\"" + getCnpjCliente() + "\"" +
+            ",\"enderecoCliente\":\"" + getEnderecoCliente() + "\"" +
+            ",\"bairroCliente\":\"" + getBairroCliente() + "\"" +
+            ",\"cidadeCliente\":\"" + getCidadeCliente() + "\"" +
+            ",\"estadoCliente\":\"" + getEstadoCliente() + "\"" +
+            ",\"ativo\":\"" + getAtivo() + "\"" +
+            ",\"emailCliente\":\"" + getEmailCliente() + "\"" +
+            ",\"telefoneCliente\":\"" + getTelefoneCliente() + "\"" +
+            ",\"qntdVeiculosCliente\":\"" + getQntdVeiculosCliente() + "\"" +
+            ",\"qntdMotoristasCliente\":\"" + getQntdMotoristasCliente() + "\"" +
             "}";
     }
 

@@ -209,18 +209,18 @@ public class Veiculo {
     @Override
     public String toString() {
         return "{" +
-            " placaVeiculo='" + getPlacaVeiculo() + "'" +
-            ", codigoInternoVeiculo='" + getCodigoInternoVeiculo() + "'" +
-            ", marcaVeiculo='" + getMarcaVeiculo() + "'" +
-            ", modeloVeiculo='" + getModeloVeiculo() + "'" +
-            ", corVeiculo='" + getCorVeiculo() + "'" +
-            ", anoVeiculo='" + getAnoVeiculo() + "'" +
-            ", quilometragemAtualVeiculo='" + getQuilometragemAtualVeiculo() + "'" +
-            ", qntdCombustivelVeiculo='" + getQntdCombustivelVeiculo() + "'" +
-            ", tipoCombustivelVeiculo='" + getTipoCombustivelVeiculo() + "'" +
-            ", tipoVeiculo='" + getTipoVeiculo() + "'" +
-            ", motorizacaoVeiculo='" + getMotorizacaoVeiculo() + "'" +
-            ", clienteId='" + getClienteId() + "'" +
+            "\"placaVeiculo\":\"" + getPlacaVeiculo() + "\"" +
+            ",\"codigoInternoVeiculo\":\"" + getCodigoInternoVeiculo() + "\"" +
+            ",\"marcaVeiculo\":\"" + getMarcaVeiculo() + "\"" +
+            ",\"modeloVeiculo\":\"" + getModeloVeiculo() + "\"" +
+            ",\"corVeiculo\":\"" + getCorVeiculo() + "\"" +
+            ",\"anoVeiculo\":\"" + getAnoVeiculo() + "\"" +
+            ",\"quilometragemAtualVeiculo\":\"" + getQuilometragemAtualVeiculo() + "\"" +
+            ",\"qntdCombustivelVeiculo\":\"" + getQntdCombustivelVeiculo() + "\"" +
+            ",\"tipoCombustivelVeiculo\":\"" + getTipoCombustivelVeiculo() + "\"" +
+            ",\"tipoVeiculo\":\"" + getTipoVeiculo() + "\"" +
+            ",\"motorizacaoVeiculo\":\"" + getMotorizacaoVeiculo() + "\"" +
+            ",\"clienteId\":\"" + getClienteId() + "\"" +
             "}";
     }
 }

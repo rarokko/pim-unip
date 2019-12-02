@@ -194,17 +194,17 @@ public class Seguro {
     @Override
     public String toString() {
         return "{" +
-            " apoliceSeguro='" + getApoliceSeguro() + "'" +
-            ", tipoSeguro='" + getTipoSeguro() + "'" +
-            ", dataVigenciaSeguro='" + getDataVigenciaSeguro() + "'" +
-            ", dataVencimentoSeguro='" + getDataVencimentoSeguro() + "'" +
-            ", valorSeguro='" + getValorSeguro() + "'" +
-            ", securadoraSeguro='" + getSecuradoraSeguro() + "'" +
-            ", corretorSeguro='" + getCorretorSeguro() + "'" +
-            ", telefoneCorretorSeguro='" + getTelefoneCorretorSeguro() + "'" +
-            ", situacaoSeguro='" + getSituacaoSeguro() + "'" +
-            ", clienteId='" + getClienteId() + "'" +
-            ", placaVeiculo='" + getPlacaVeiculo() + "'" +
+            "\"apoliceSeguro\":\"" + getApoliceSeguro() + "\"" +
+            ",\"tipoSeguro\":\"" + getTipoSeguro() + "\"" +
+            ",\"dataVigenciaSeguro\":\"" + getDataVigenciaSeguro() + "\"" +
+            ",\"dataVencimentoSeguro\":\"" + getDataVencimentoSeguro() + "\"" +
+            ",\"valorSeguro\":\"" + getValorSeguro() + "\"" +
+            ",\"securadoraSeguro\":\"" + getSecuradoraSeguro() + "\"" +
+            ",\"corretorSeguro\":\"" + getCorretorSeguro() + "\"" +
+            ",\"telefoneCorretorSeguro\":\"" + getTelefoneCorretorSeguro() + "\"" +
+            ",\"situacaoSeguro\":\"" + getSituacaoSeguro() + "\"" +
+            ",\"clienteId\":\"" + getClienteId() + "\"" +
+            ",\"placaVeiculo\":\"" + getPlacaVeiculo() + "\"" +
             "}";
     }
 

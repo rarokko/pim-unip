@@ -164,15 +164,15 @@ public class Multa {
     @Override
     public String toString() {
         return "{" +
-            " valorMulta='" + getValorMulta() + "'" +
-            ", dataMulta='" + getDataMulta() + "'" +
-            ", enderecoMulta='" + getEnderecoMulta() + "'" +
-            ", vencimentoPagamentoMulta='" + getVencimentoPagamentoMulta() + "'" +
-            ", dataPagamentoMulta='" + getDataPagamentoMulta() + "'" +
-            ", descricaoMulta='" + getDescricaoMulta() + "'" +
-            ", clienteId='" + getClienteId() + "'" +
-            ", cpfMotorista='" + getCpfMotorista() + "'" +
-            ", placaVeiculo='" + getPlacaVeiculo() + "'" +
+            "\"valorMulta\":\"" + getValorMulta() + "\"" +
+            ",\"dataMulta\":\"" + getDataMulta() + "\"" +
+            ",\"enderecoMulta\":\"" + getEnderecoMulta() + "\"" +
+            ",\"vencimentoPagamentoMulta\":\"" + getVencimentoPagamentoMulta() + "\"" +
+            ",\"dataPagamentoMulta\":\"" + getDataPagamentoMulta() + "\"" +
+            ",\"descricaoMulta\":\"" + getDescricaoMulta() + "\"" +
+            ",\"clienteId\":\"" + getClienteId() + "\"" +
+            ",\"cpfMotorista\":\"" + getCpfMotorista() + "\"" +
+            ",\"placaVeiculo\":\"" + getPlacaVeiculo() + "\"" +
             "}";
     }
 

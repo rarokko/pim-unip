@@ -104,11 +104,11 @@ public class Pecas {
     @Override
     public String toString() {
         return "{" +
-            " nomePeca='" + getNomePeca() + "'" +
-            ", qntdPeca='" + getQntdPeca() + "'" +
-            ", descricaoPeca='" + getDescricaoPeca() + "'" +
-            ", valorPeca='" + getValorPeca() + "'" +
-            ", clienteId='" + getClienteId() + "'" +
+            "\"nomePeca\":\"" + getNomePeca() + "\"" +
+            ",\"qntdPeca\":\"" + getQntdPeca() + "\"" +
+            ",\"descricaoPeca\":\"" + getDescricaoPeca() + "\"" +
+            ",\"valorPeca\":\"" + getValorPeca() + "\"" +
+            ",\"clienteId\":\"" + getClienteId() + "\"" +
             "}";
     }
 

@@ -134,13 +134,13 @@ public class Abastecimento {
     @Override
     public String toString() {
         return "{" +
-            " dataAbastecimento='" + getDataAbastecimento() + "'" +
-            ", postoAbastecimento='" + getPostoAbastecimento() + "'" +
-            ", tipoCombustivelAbastecimento='" + getTipoCombustivelAbastecimento() + "'" +
-            ", litrosAbastecimento='" + getLitrosAbastecimento() + "'" +
-            ", valorTotalAbastecimento='" + getValorTotalAbastecimento() + "'" +
-            ", clienteId='" + getClienteId() + "'" +
-            ", placaVeiculo='" + getPlacaVeiculo() + "'" +
+            "\"dataAbastecimento\":\"" + getDataAbastecimento() + "\"" +
+            ",\"postoAbastecimento\":\"" + getPostoAbastecimento() + "\"" +
+            ",\"tipoCombustivelAbastecimento\":\"" + getTipoCombustivelAbastecimento() + "\"" +
+            ",\"litrosAbastecimento\":\"" + getLitrosAbastecimento() + "\"" +
+            ",\"valorTotalAbastecimento\":\"" + getValorTotalAbastecimento() + "\"" +
+            ",\"clienteId\":\"" + getClienteId() + "\"" +
+            ",\"placaVeiculo\":\"" + getPlacaVeiculo() + "\"" +
             "}";
     }
 }

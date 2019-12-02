@@ -134,13 +134,13 @@ public class Manutencao {
     @Override
     public String toString() {
         return "{" +
-            " dataManutencao='" + getDataManutencao() + "'" +
-            ", empresaManutencao='" + getEmpresaManutencao() + "'" +
-            ", tipoManutencao='" + getTipoManutencao() + "'" +
-            ", descricaoManutencao='" + getDescricaoManutencao() + "'" +
-            ", valorManutencao='" + getValorManutencao() + "'" +
-            ", clienteId='" + getClienteId() + "'" +
-            ", placaVeiculo='" + getPlacaVeiculo() + "'" +
+            "\"dataManutencao\":\"" + getDataManutencao() + "\"" +
+            ",\"empresaManutencao\":\"" + getEmpresaManutencao() + "\"" +
+            ",\"tipoManutencao\":\"" + getTipoManutencao() + "\"" +
+            ",\"descricaoManutencao\":\"" + getDescricaoManutencao() + "\"" +
+            ",\"valorManutencao\":\"" + getValorManutencao() + "\"" +
+            ",\"clienteId\":\"" + getClienteId() + "\"" +
+            ",\"placaVeiculo\":\"" + getPlacaVeiculo() + "\"" +
             "}";
     }
 

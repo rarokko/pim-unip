@@ -238,20 +238,20 @@ public class Motorista {
     @Override
     public String toString() {
         return "{" +
-            " cpfMotorista='" + getCpfMotorista() + "'" +
-            ", nomeMotorista='" + getNomeMotorista() + "'" +
-            ", dataNascimentoMotorista='" + getDataNascimentoMotorista() + "'" +
-            ", cnhMotorista='" + getCnhMotorista() + "'" +
-            ", validadeCnhMotorista='" + getValidadeCnhMotorista() + "'" +
-            ", categoriaCnhMotorista='" + getCategoriaCnhMotorista() + "'" +
-            ", estadoMotorista='" + getEstadoMotorista() + "'" +
-            ", cidadeMotorista='" + getCidadeMotorista() + "'" +
-            ", bairroMotorista='" + getBairroMotorista() + "'" +
-            ", enderecoMotorista='" + getEnderecoMotorista() + "'" +
-            ", telefoneMotorista='" + getTelefoneMotorista() + "'" +
-            ", emailMotorista='" + getEmailMotorista() + "'" +
-            ", exameMedicoMotorista='" + getExameMedicoMotorista() + "'" +
-            ", clienteID='" + getClienteID() + "'" +
+            "\"cpfMotorista\":\"" + getCpfMotorista() + "\"" +
+            ",\"nomeMotorista\":\"" + getNomeMotorista() + "\"" +
+            ",\"dataNascimentoMotorista\":\"" + getDataNascimentoMotorista() + "\"" +
+            ",\"cnhMotorista\":\"" + getCnhMotorista() + "\"" +
+            ",\"validadeCnhMotorista\":\"" + getValidadeCnhMotorista() + "\"" +
+            ",\"categoriaCnhMotorista\":\"" + getCategoriaCnhMotorista() + "\"" +
+            ",\"estadoMotorista\":\"" + getEstadoMotorista() + "\"" +
+            ",\"cidadeMotorista\":\"" + getCidadeMotorista() + "\"" +
+            ",\"bairroMotorista\":\"" + getBairroMotorista() + "\"" +
+            ",\"enderecoMotorista\":\"" + getEnderecoMotorista() + "\"" +
+            ",\"telefoneMotorista\":\"" + getTelefoneMotorista() + "\"" +
+            ",\"emailMotorista\":\"" + getEmailMotorista() + "\"" +
+            ",\"exameMedicoMotorista\":\"" + getExameMedicoMotorista() + "\"" +
+            ",\"clienteID\":\"" + getClienteID() + "\"" +
             "}";
     }
     public String clienteID;
